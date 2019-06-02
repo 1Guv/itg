@@ -12,9 +12,16 @@ export class VehiclesComponent implements OnInit {
   vehicles: object;
   vehicle: object;
 
-  constructor(dataService: DataService) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.getVehicles()
+    .subscribe(
+      data => {
+        this.vehicles = data;
+        console.log(data);
+      }
+    );
   }
 
 }

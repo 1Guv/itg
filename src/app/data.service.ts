@@ -13,11 +13,11 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getVehicles(url?: string) {
-    return this.httpClient.get<Vehicles[]>('${this.apiVehiclesURL}');
+  public getVehicles() {
+    return this.httpClient.get<Vehicles[]>(this.apiVehiclesURL);
   }
 
   public getVehicleById(id: string) {
-    return this.httpClient.get<Vehicle[]>('${this.apiVehiclesURL}/${id}');
+    return this.httpClient.get<Vehicle[]>(this.apiVehicleURL + '/$id');
   }
 }
