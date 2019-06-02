@@ -24,4 +24,9 @@ export class VehiclesComponent implements OnInit {
     );
   }
 
+  showVehicle(id: string) {
+    console.log('showVehicle');
+    console.log(id);
+  }
+
 }
