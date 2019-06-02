@@ -1,7 +1,9 @@
 <div id="vehicles" class="container-fluid">
     <div class="row no-gutters">
       <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let vehicle of vehicles">
-        <a (click)="showVehicle(vehicle.id)"><img src="../assets/{{vehicle.media[0].url}}" class="img-fluid"></a>
+        <a (click)="showVehicle(vehicle.id)">
+          <img src="../assets/{{vehicle.media[0].url}}" class="img-fluid">
+        </a>
         <div class="footer border">
             <h2 class="p-4"><span class="border-top border-bottom border-dark p-1">{{vehicle.id}}</span></h2>
           <p>From £76,000</p>
