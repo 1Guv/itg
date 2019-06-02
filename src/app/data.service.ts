@@ -9,7 +9,7 @@ import { Vehicle } from './classes/vehicle';
 export class DataService {
 
   apiVehiclesURL = 'https://itg-prd-recruit.appspot.com/api/vehicles/';
-  apiVehicleURL = 'https://itg-prd-recruit.appspot.com/api/vehicle/xe';
+  apiVehicleURL = 'https://itg-prd-recruit.appspot.com/api/vehicle/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,5 +17,7 @@ export class DataService {
     return this.httpClient.get<Vehicles[]>('${this.apiVehiclesURL}');
   }
 
-  public getVehicleById(id: string) {}
+  public getVehicleById(id: string) {
+    return this.httpClient.get<Vehicle[]>('${this.apiVehiclesURL}/${id}');
+  }
 }
