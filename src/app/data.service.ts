@@ -18,6 +18,6 @@ export class DataService {
   }
 
   public getVehicleById(id: string) {
-    return this.httpClient.get<Vehicle[]>(this.apiVehicleURL + '/$id');
+    return this.httpClient.get<Vehicle[]>(this.apiVehicleURL + `${id}`);
   }
 }

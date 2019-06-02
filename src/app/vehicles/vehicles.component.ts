@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Vehicles } from '../classes/vehicles';
+import { Vehicle } from '../classes/vehicle';
 import { DataService } from '../data.service';
 
 @Component({
@@ -17,9 +18,9 @@ export class VehiclesComponent implements OnInit {
   ngOnInit() {
     this.dataService.getVehicles()
     .subscribe(
-      data => {
-        this.vehicles = data;
-        console.log(data);
+      (vehicles: Vehicles[]) => {
+        this.vehicles = vehicles;
+        console.log(vehicles);
       }
     );
   }
@@ -27,6 +28,13 @@ export class VehiclesComponent implements OnInit {
   showVehicle(id: string) {
     console.log('showVehicle');
     console.log(id);
+    this.dataService.getVehicleById(id)
+    .subscribe(
+      (vehicle: Vehicle[]) => {
+        this.vehicle = vehicle;
+        console.log(vehicle);
+      }
+    );
   }
 
 }
